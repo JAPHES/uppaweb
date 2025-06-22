@@ -1,0 +1,172 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <title>Departments Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @media (max-width: 768px) {
+    .responsive-banner {
+      height: 250px !important;
+    }
+  }
+  </style>
+</head>
+
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+<!-- Navbar -->
+{% include 'uppa/navbar.html' %}
+
+  <!-- Contact Us Banner Section -->
+<section class="container mt-4">
+  <div class="position-relative rounded overflow-hidden border-top border-5 border-warning shadow-lg">
+    <img src="{% static 'images/banner2.jpg' %}"
+     alt="Contact Banner"
+     class="img-fluid w-100 responsive-banner"
+     style="height: 500px; object-fit: cover; display: block; border-radius: 10px; z-index: 10; position: relative;">
+  </div>
+</section>
+
+  <!-- Introductory Paragraph -->
+  <section class="py-12 px-4 md:px-16 bg-white">
+    <div class="max-w-4xl mx-auto text-center">
+       <button class="btn btn-primary mb-3" style="pointer-events: none;">
+        <h3 class="fs-3 fw-bold">
+            <i class="fas fa-cog me-2 fs-2"></i> What Our Departments Do!
+        </h3>
+      </button>
+      <p class="text-lg leading-relaxed text-gray-700">
+        UPPA is structured into various departments that collaborate to achieve our mission of youth empowerment, innovation, and job creation. Each department plays a unique role in executing our vision.
+      </p>
+    </div>
+  </section>
+
+  <!-- Department Cards Section -->
+  <section class="py-12 px-4 md:px-16 bg-gray-100">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+
+      <!-- Department Card -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition duration-300">
+        <img src="/static/images/banner3.jpg" alt="Project Management" class="w-full h-48 object-cover rounded-t-xl">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-2">Project Management Department</h3>
+          <p class="text-gray-600 text-sm">Oversees planning, implementation, and evaluation of UPPA’s projects across the 47 counties.</p>
+        </div>
+      </div>
+
+      <!-- Department Card -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition duration-300">
+        <img src="/static/images/banner2.jpg" alt="Finance & Treasury" class="w-full h-48 object-cover rounded-t-xl">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-2">Finance & Funding Department</h3>
+          <p class="text-gray-600 text-sm">Manages all financial matters, including budgeting, financial reporting, and member contributions.</p>
+        </div>
+      </div>
+
+      <!-- Department Card -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition duration-300">
+        <img src="/static/images/banner3.jpg" alt="Communications" class="w-full h-48 object-cover rounded-t-xl">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-2">ICT Departments</h3>
+          <p class="text-gray-600 text-sm">Handles internal and external communication, media outreach, and publicity.</p>
+        </div>
+      </div>
+
+       <!-- Department Card -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition duration-300">
+        <img src="/static/images/banner2.jpg" alt="Communications" class="w-full h-48 object-cover rounded-t-xl">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-2">Reasearch, Innovation and Development</h3>
+          <p class="text-gray-600 text-sm">Handles internal and external communication, media outreach, and publicity.</p>
+        </div>
+      </div>
+
+       <!-- Department Card -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition duration-300">
+        <img src="/static/images/banner2.jpg" alt="Communications" class="w-full h-48 object-cover rounded-t-xl">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-2">Communications Department</h3>
+          <p class="text-gray-600 text-sm">Handles internal and external communication, media outreach, and publicity.</p>
+        </div>
+      </div>
+       <!-- Department Card -->
+      <div class="bg-white rounded-xl shadow hover:shadow-lg transition duration-300">
+        <img src="/static/images/banner2.jpg" alt="Communications" class="w-full h-48 object-cover rounded-t-xl">
+        <div class="p-5">
+          <h3 class="text-xl font-semibold mb-2">Social Media  Department</h3>
+          <p class="text-gray-600 text-sm">Handles internal and external communication, media outreach, and publicity.</p>
+        </div>
+      </div>
+
+
+
+      <!-- Add more department cards if needed -->
+
+    </div>
+  </section>
+
+ <!-- Department Leaders Section -->
+<section class="py-20 px-8 md:px-20 bg-white">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-10">Department Leaders</h2>
+
+    <div class="flex space-x-6 overflow-x-auto">
+      <!-- Leader Card -->
+      <div class="w-80 flex-shrink-0 bg-gray-100 rounded-xl shadow-md text-center p-8 hover:shadow-lg transition duration-300">
+  <div class="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full bg-white">
+    <img src="/static/images/jared.jpg" alt="Leader 1" class="w-full h-full object-contain">
+  </div>
+  <h3 class="text-xl font-semibold">Jared Etaba</h3>
+  <p class="text-base text-gray-600">Head of Research and Innovation Department</p>
+</div>
+
+
+      <!-- Repeat more cards below -->
+      <div class="w-80 flex-shrink-0 bg-gray-100 rounded-xl shadow-md text-center p-8 hover:shadow-lg transition duration-300">
+        <img src="/static/images/japhes.jpg" alt="Leader 2" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+        <h3 class="text-xl font-semibold">Michael Otieno</h3>
+        <p class="text-base text-gray-600">Head of Finance</p>
+      </div>
+
+       <!-- Repeat more cards below -->
+      <div class="w-80 flex-shrink-0 bg-gray-100 rounded-xl shadow-md text-center p-8 hover:shadow-lg transition duration-300">
+        <img src="/static/images/japhes.jpg" alt="Leader 2" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+        <h3 class="text-xl font-semibold">Japhes Murithi</h3>
+        <p class="text-base text-gray-600">IT Specialist, Head of ICT Departments</p>
+      </div>
+       <!-- Repeat more cards below -->
+      <div class="w-80 flex-shrink-0 bg-gray-100 rounded-xl shadow-md text-center p-8 hover:shadow-lg transition duration-300">
+        <img src="/static/images/japhes.jpg" alt="Leader 2" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+        <h3 class="text-xl font-semibold">Michael Otieno</h3>
+        <p class="text-base text-gray-600">Head of Finance</p><br>
+      </div>
+       <!-- Repeat more cards below -->
+      <div class="w-80 flex-shrink-0 bg-gray-100 rounded-xl shadow-md text-center p-8 hover:shadow-lg transition duration-300">
+        <img src="/static/images/japhes.jpg" alt="Leader 2" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+        <h3 class="text-xl font-semibold">Michael Otieno</h3>
+        <p class="text-base text-gray-600">Head of Finance</p><br>
+      </div>
+       <!-- Repeat more cards below -->
+      <div class="w-80 flex-shrink-0 bg-gray-100 rounded-xl shadow-md text-center p-8 hover:shadow-lg transition duration-300">
+        <img src="/static/images/japhes.jpg" alt="Leader 2" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+        <h3 class="text-xl font-semibold">Michael Otieno</h3>
+        <p class="text-base text-gray-600">Head of Finance</p><br>
+      </div>
+
+
+
+      <!-- More cards... -->
+    </div>
+  </div>
+</section>
+
+
+<!-- Footer -->
+{% include 'uppa/footer.html' %}
+</body>
+</html>

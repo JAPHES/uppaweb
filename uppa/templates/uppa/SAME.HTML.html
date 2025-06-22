@@ -1,0 +1,225 @@
+!<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <title>Document</title>
+</head>
+<body>
+<footer style="background-color: #1d0079; color: white; padding: 50px 0 20px;">
+  <div class="container">
+    <div class="row text-white">
+      <!-- Company Info -->
+      <div class="col-md-3 mb-4">
+        <h5 style="color: orange;">Morix Company Ltd</h5>
+        <p><i class="bi bi-geo-alt-fill"></i> Namanga Road, Kitengela, Kajiado</p>
+        <p><i class="bi bi-telephone-fill"></i> +254 746 904 399</p>
+        <p><i class="bi bi-envelope-fill"></i> info@morix.co.ke /<br>morixcompanyltd@gmail.com</p>
+        <div class="d-flex gap-2 mt-3">
+          <a href="#" class="btn btn-sm btn-outline-warning rounded"><i class="bi bi-twitter"></i></a>
+          <a href="#" class="btn btn-sm btn-outline-warning rounded"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="btn btn-sm btn-outline-warning rounded"><i class="bi bi-youtube"></i></a>
+          <a href="#" class="btn btn-sm btn-outline-warning rounded"><i class="bi bi-tiktok"></i></a>
+          <a href="#" class="btn btn-sm btn-outline-warning rounded"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-3 mb-4">
+        <h5 style="color: orange;">Quick Links</h5>
+        <p><i class="bi bi-house-fill"></i> Home</p>
+        <p><i class="bi bi-rss-fill"></i> Blog</p>
+        <p><i class="bi bi-briefcase-fill"></i> Services</p>
+        <p><i class="bi bi-heart-fill"></i> Contact</p>
+      </div>
+
+      <!-- Objectives -->
+      <div class="col-md-3 mb-4">
+        <h5 style="color: orange;">Our Objectives</h5>
+        <p><i class="bi bi-droplet-fill"></i> Access to Clean Water</p>
+        <p><i class="bi bi-pc-display-horizontal"></i> Renewable Energy Solutions</p>
+        <p><i class="bi bi-leaf-fill"></i> Foster Environmental Sustainability</p>
+        <p><i class="bi bi-gear-fill"></i> Technical Excellence and Innovation</p>
+      </div>
+
+      <!-- News Update -->
+      <div class="col-md-3 mb-4">
+        <h5 style="color: orange;">News Update</h5>
+        <p><i class="bi bi-file-earmark-text-fill"></i> Borehole Drilling</p>
+        <p><i class="bi bi-journal-richtext"></i> Hydrogeological Survey</p>
+        <p><i class="bi bi-person-plus-fill"></i> Solar Power Solutions</p>
+        <p><i class="bi bi-file-earmark"></i> Customer Manual</p>
+      </div>
+    </div>
+
+    <hr style="border-color: rgba(255,255,255,0.3);">
+
+    <div class="d-flex justify-content-between text-white small mt-3">
+      <div>© morix.co.ke</div>
+      <div>All Rights Reserved. Morix Company Ltd</div>
+    </div>
+  </div>
+
+  <!-- Scroll-to-top button -->
+  <a href="#" class="btn btn-primary position-fixed bottom-0 end-0 m-3 rounded-circle">
+    <i class="bi bi-arrow-up"></i>
+  </a>
+</footer>
+
+</body>
+</html>
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UPPA</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .top-bar {
+      background-color: darkblue;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 14px;
+      border-bottom: 1px solid #e7e7e7;
+      height: 105px;
+    }
+
+    .top-bar .slogan {
+      font-weight: bold;
+      color: #007bff;
+    }
+
+    .top-bar .contact {
+      color: white;
+      margin-top: 5px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 5%;
+      background-color: grey;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      height: 70px;
+      width: 70px;
+      margin-right: 20px;
+    }
+
+    .logo-text {
+      font-size: 20px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+      justify-content: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: black;
+      font-size: 25px;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #007bff;
+    }
+
+    /* Responsive Styling */
+    @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 20px;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .nav-links a {
+        font-size: 16px;
+      }
+
+      .logo {
+        margin-bottom: 10px;
+      }
+
+      .logo-text {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .top-bar .contact {
+        font-size: 12px;
+      }
+
+      .top-bar .slogan {
+        font-size: 14px;
+      }
+
+      .nav-links a {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="top-bar">
+    <div class="slogan">REACH OUT TO UPPA</div>
+    <div class="contact">• +254 746 904399 info@morix.co.ke Mon - Fri 8:00 - 17:00</div>
+  </div>
+
+  <header class="header">
+    <div class="logo">
+      <img src="{% static 'images/uppalogo.jpg' %}" alt="UPPA Logo" />
+      <div class="logo-text">EXPLORE UPPA</div>
+    </div>
+
+    <nav class="nav-links">
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'about' %}">About Us</a>
+      <a href="{% url 'departments' %}">Departments</a>
+      <a href="{% url 'home' %}">Projects</a>
+      <a href="{% url 'contact' %}">Contact Us</a>
+      <a href="{% url 'team' %}">Our Team</a>
+    </nav>
+  </header>
+</body>
+</html>
