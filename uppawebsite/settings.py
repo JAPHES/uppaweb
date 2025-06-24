@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 import os
 from pathlib import Path
 
+from django.contrib import staticfiles
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -23,9 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-l-!v&8560s)l3s1el(qeu#2d0=76b6qv^wug!!+^-fs%m!m^p6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+## this is not alllowed when on the production
+#DEBUG = True
+
+ALLOWED_HOSTS = ['uppawebsite.onrender.com']
 
 
 # Application definition
@@ -116,7 +121,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+#only needed in production
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles' )
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
@@ -134,5 +141,4 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'uppa/static'),  # Adjust if your app isn't named 'core'
 ]
 
-# Only needed in production
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+

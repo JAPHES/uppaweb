@@ -1,0 +1,1 @@
+web: gunicorn uppawebsite.wsgi:application
