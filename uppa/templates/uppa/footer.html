@@ -31,13 +31,30 @@
       </div>
 
       <!-- Quick Links -->
-      <div class="col-md-3 mb-4">
-        <h5 style="color: orange;">Quick Links</h5>
-        <p><i class="bi bi-house-fill"></i> Home</p>
-        <p><i class="bi bi-rss-fill"></i> Blog</p>
-        <p><i class="bi bi-briefcase-fill"></i> Services</p>
-        <p><i class="bi bi-heart-fill"></i> Contact</p>
-      </div>
+<div class="col-md-3 mb-4">
+  <h5 style="color: orange;">Quick Links</h5>
+  <p>
+    <a href="{% url 'home' %}" class="text-white text-decoration-none">
+      <i class="bi bi-house-fill"></i> Home
+    </a>
+  </p>
+  <p>
+    <a href="{% url 'blog' %}" class="text-white text-decoration-none">
+      <i class="bi bi-rss-fill"></i> Blog
+    </a>
+  </p>
+  <p>
+    <a href="{% url 'services' %}" class="text-white text-decoration-none">
+      <i class="bi bi-briefcase-fill"></i> Services
+    </a>
+  </p>
+  <p>
+    <a href="{% url 'contact' %}" class="text-white text-decoration-none">
+      <i class="bi bi-heart-fill"></i> Contact
+    </a>
+  </p>
+</div>
+
 
       <!-- Objectives -->
       <div class="col-md-3 mb-4">
