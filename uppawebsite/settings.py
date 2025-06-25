@@ -32,12 +32,13 @@ MIDDLEWARE = [
 SECRET_KEY = 'django-insecure-l-!v&8560s)l3s1el(qeu#2d0=76b6qv^wug!!+^-fs%m!m^p6'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG =True
 
 ## this is not alllowed when on the production
 #DEBUG = True
 
-ALLOWED_HOSTS = ['uppawebsite.onrender.com']
+ALLOWED_HOSTS = ['uppawebsite.onrender.com', '127.0.0.1', 'localhost']
+
 
 
 # Application definition
