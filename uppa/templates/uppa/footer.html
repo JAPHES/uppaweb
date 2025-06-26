@@ -63,14 +63,34 @@
       </div>
 
       <!-- News Update -->
-      <div class="col-md-3 mb-4">
-        <h5 style="color: orange;">News Update</h5>
-        <p><i class="bi bi-file-earmark-text-fill"></i> UPPA Launches Youth Skill Development Program</p>
-        <p><i class="bi bi-journal-richtext"></i> UPPA Successfully Holds First Leadership Forum</p>
-        <p><i class="bi bi-person-plus-fill"></i> UPPA Elections Set for June 10th</p>
-        <p><i class="bi bi-file-earmark"></i> UPPA Membership Drive Ongoing</p>
-      </div>
-    </div>
+<div class="col-md-3 mb-4">
+  <h5 style="color: orange;">News Update</h5>
+  <p>
+    <i class="bi bi-file-earmark-text-fill"></i>
+    <a href="{% url 'news_detail' 1 %}" class="text-decoration-none text-white hover:text-primary">
+      UPPA Launches Youth Skill Development Program
+    </a>
+  </p>
+  <p>
+    <i class="bi bi-journal-richtext"></i>
+    <a href="{% url 'news_detail' 2 %}" class="text-decoration-none text-white hover:text-primary">
+      UPPA Successfully Holds First Leadership Forum
+    </a>
+  </p>
+  <p>
+    <i class="bi bi-person-plus-fill"></i>
+    <a href="{% url 'news_detail' 3 %}" class="text-decoration-none text-white hover:text-primary">
+      UPPA Elections Set for June 10th
+    </a>
+  </p>
+  <p>
+    <i class="bi bi-file-earmark"></i>
+    <a href="{% url 'news_detail' 4 %}" class="text-decoration-none text-white hover:text-primary">
+      UPPA Membership Drive Ongoing
+    </a>
+  </p>
+</div>
+
 
     <hr style="border-color: rgba(255,255,255,0.3);">
 

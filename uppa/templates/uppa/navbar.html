@@ -32,26 +32,28 @@
       </button>
 
       <!-- Navigation Links -->
-     <nav id="nav-links" class="hidden md:flex flex-col md:flex-row gap-4 mt-3 md:mt-0 md:items-center md:gap-6 text-[16px] md:text-[25px] font-medium">
-  <a href="{% url 'home' %}" class="text-black hover:text-[#007bff] transition-colors">Home</a>
-  <a href="{% url 'about' %}" class="text-black hover:text-[#007bff] transition-colors">About Us</a>
-  <a href="{% url 'departments' %}" class="text-black hover:text-[#007bff] transition-colors">Departments</a>
-  <a href="{% url 'home' %}" class="text-black hover:text-[#007bff] transition-colors">Projects</a>
-  <a href="{% url 'contact' %}" class="text-black hover:text-[#007bff] transition-colors">Contact Us</a>
-  <a href="{% url 'team' %}" class="text-black hover:text-[#007bff] transition-colors">Our Team</a>
+    <nav id="nav-links" class="hidden md:flex flex-col md:flex-row gap-4 mt-3 md:mt-0 md:items-center md:gap-6 text-[16px] md:text-[25px] font-medium">
+  <a href="{% url 'home' %}" class="no-underline text-black hover:text-[#007bff] transition-colors">Home</a>
+  <a href="{% url 'about' %}" class="no-underline text-black hover:text-[#007bff] transition-colors">About Us</a>
+  <a href="{% url 'departments' %}" class="no-underline text-black hover:text-[#007bff] transition-colors">Departments</a>
+  <a href="{% url 'home' %}" class="no-underline text-black hover:text-[#007bff] transition-colors">Projects</a>
+  <a href="{% url 'contact' %}" class="no-underline text-black hover:text-[#007bff] transition-colors">Contact Us</a>
+  <a href="{% url 'team' %}" class="no-underline text-black hover:text-[#007bff] transition-colors">Our Team</a>
 </nav>
+
 
     </div>
 
     <!-- Mobile Menu -->
     <div id="mobile-menu" class="md:hidden hidden px-4 pb-4 text-[18px] font-medium">
-  <a href="{% url 'home' %}" class="block py-1 text-black hover:text-[#007bff] transition-colors">Home</a>
-  <a href="{% url 'about' %}" class="block py-1 text-black hover:text-[#007bff] transition-colors">About Us</a>
-  <a href="{% url 'departments' %}" class="block py-1 text-black hover:text-[#007bff] transition-colors">Departments</a>
-  <a href="{% url 'home' %}" class="block py-1 text-black hover:text-[#007bff] transition-colors">Projects</a>
-  <a href="{% url 'contact' %}" class="block py-1 text-black hover:text-[#007bff] transition-colors">Contact Us</a>
-  <a href="{% url 'team' %}" class="block py-1 text-black hover:text-[#007bff] transition-colors">Our Team</a>
+  <a href="{% url 'home' %}" class="block py-1 text-black no-underline hover:text-[#007bff] transition-colors">Home</a>
+  <a href="{% url 'about' %}" class="block py-1 text-black no-underline hover:text-[#007bff] transition-colors">About Us</a>
+  <a href="{% url 'departments' %}" class="block py-1 text-black no-underline hover:text-[#007bff] transition-colors">Departments</a>
+  <a href="{% url 'home' %}" class="block py-1 text-black no-underline hover:text-[#007bff] transition-colors">Projects</a>
+  <a href="{% url 'contact' %}" class="block py-1 text-black no-underline hover:text-[#007bff] transition-colors">Contact Us</a>
+  <a href="{% url 'team' %}" class="block py-1 text-black no-underline hover:text-[#007bff] transition-colors">Our Team</a>
 </div>
+
 
   </header>
 
