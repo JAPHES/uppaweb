@@ -44,7 +44,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
 <script>
   (function(){
-    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual Public Key
+    emailjs.init("XLlKYWDRWoHOz3OUW"); // Replace with your actual Public Key
   })();
 </script>
 
@@ -112,17 +112,25 @@
   <div class="container py-5">
     <div class="row g-4">
       <!-- Left: Form -->
-      <div class="col-lg-6">
-        <div class="contact-card">
-          <h4 class="text-center mb-4">Leave a Message</h4>
-          <form id="contactForm">
-              <input type="text" class="form-control" name="name" placeholder="Enter your name"><br>
-              <input type="email" class="form-control" name="email" placeholder="Enter your email"><br>
-              <input type="text" class="form-control" name="title" placeholder="Enter a title"><br>
-              <textarea class="form-control" name="feedback" rows="4" placeholder="Write your feedback here..."></textarea><br>
-              <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
-              Submit
-              </button>
+<div class="col-lg-6">
+  <div class="contact-card">
+    <h4 class="text-center mb-4">Leave a Message</h4>
+    <form id="contactForm">
+      <input type="text" class="form-control" name="name" placeholder="Enter your name" required><br>
+
+      <input type="email" class="form-control" name="email" placeholder="Enter your email" required><br>
+
+      <input type="text" class="form-control" name="title" placeholder="Enter a title"><br> <!-- Not required -->
+
+      <textarea class="form-control" name="feedback" rows="4" placeholder="Write your feedback here..." required></textarea><br>
+
+      <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+
 
           </form>
         </div>
@@ -151,7 +159,7 @@
   document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', this)
+    emailjs.sendForm('service_tuxylms', 'template_o1fwd4s', this)
       .then(function() {
         alert('Message sent successfully!');
         document.getElementById('contactForm').reset();
