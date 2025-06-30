@@ -16,3 +16,6 @@ def contact(request):
 
 def team(request):
     return render(request, 'uppa/team.html')
+
+def projects(request):
+    return render(request, 'uppa/projects.html')
