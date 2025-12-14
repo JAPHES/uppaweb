@@ -1,0 +1,134 @@
+/*team section styling on team.html*/
+/* Team Section */
+ @media (max-width: 768px) {
+    .responsive-banner {
+      height: 250px !important;
+    }
+  }
+
+
+
+
+
+
+.team {
+  padding: 80px 0;
+  background: #f8f9fa;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.section-title .subtitle {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0d6efd;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.section-title h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.section-title p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #6c757d;
+  font-size: 16px;
+}
+
+/* Team Member Card */
+.team-member {
+  background: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.35s ease;
+  height: 100%;
+}
+
+.team-member:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.15);
+}
+
+/* Image */
+.team-member .member-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.team-member .member-img img {
+  width: 100%;
+  transition: transform 0.4s ease;
+}
+
+.team-member:hover .member-img img {
+  transform: scale(1.08);
+}
+
+/* Member Info */
+.member-info {
+  padding: 25px;
+  text-align: center;
+}
+
+.member-info h4 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.member-info span {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0d6efd;
+  margin-bottom: 15px;
+}
+
+.member-info p {
+  font-size: 14px;
+  color: #6c757d;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+/* Social Icons */
+.member-info .social {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.member-info .social a {
+  width: 38px;
+  height: 38px;
+  background: #f1f3f5;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0d6efd;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.member-info .social a:hover {
+  background: #0d6efd;
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .section-title h2 {
+    font-size: 28px;
+  }
+}

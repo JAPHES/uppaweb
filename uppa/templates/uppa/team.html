@@ -5,15 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UPPA Team</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    @media (max-width: 768px) {
-    .responsive-banner {
-      height: 250px !important;
-    }
-  }
-
-  </style>
+   <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
@@ -30,81 +23,170 @@
   </div>
 </section>
 
-<!-- Team Introduction Section -->
-<section class="py-12 bg-white">
-  <div class="max-w-4xl mx-auto text-center px-4">
-    <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-4">Meet the UPPA Team</h2>
-    <p class="text-gray-700 text-base md:text-lg leading-relaxed">
-      At the heart of UPPA is a dynamic team of passionate individuals committed to driving positive change.
-      Our team brings together diverse expertise in innovation, community development, environmental sustainability,
-      and youth empowerment. Together, we work collaboratively to implement impactful projects and create lasting
-      solutions that uplift our communities.
-    </p>
-  </div>
-</section>
 
+                                                     <!-- Team Section -->
+    <section id="team" class="team section">
 
-  <!-- Team Section -->
-  <section class="py-12 px-6 md:px-20">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <span class="subtitle">Team</span>
+        <h2>Meet Our Team</h2>
+        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam</p>
+      </div><!-- End Section Title -->
 
-      <!-- Team Member 1 -->
-      <div class="bg-white shadow-lg rounded-xl p-4 text-center">
-        <img src="/static/images/integ.jpg" alt="Yukabeth Kidenda" class="rounded-lg mx-auto mb-4" />
-        <p class="text-teal-600 text-sm font-medium">CEO and Co-Founder</p>
-        <h2 class="text-lg font-semibold mt-1">Yukabeth Kidenda</h2>
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-5">
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="/static/images/integ.jpg" class="img-fluid" alt="Sarah Johnson" loading="lazy">
+              </div>
+              <div class="member-info">
+                <h4>Sarah Johnson</h4>
+                <span>Chief Executive Officer</span>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas vestibulum tortor quam.</p>
+                <div class="social">
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="250">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="/static/images/essy.jpg" class="img-fluid" alt="Michael Chen" loading="lazy">
+              </div>
+              <div class="member-info">
+                <h4>Michael Chen</h4>
+                <span>Chief Technology Officer</span>
+                <p>Mauris blandit aliquet elit eget tincidunt nibh pulvinar rutrum tellus ac blandit elit eget tincidunt mauris.</p>
+                <div class="social">
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="/static/images/essyalso.jpg" class="img-fluid" alt="Emily Rodriguez" loading="lazy">
+              </div>
+              <div class="member-info">
+                <h4>Emily Rodriguez</h4>
+                <span>Creative Director</span>
+                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec velit neque auctor.</p>
+                <div class="social">
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-dribbble"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="350">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="/static/images/grace.jpg" class="img-fluid" alt="David Thompson" loading="lazy">
+              </div>
+              <div class="member-info">
+                <h4>David Thompson</h4>
+                <span>Head of Operations</span>
+                <p>Curabitur arcu erat accumsan id imperdiet et porttitor at sem nulla facilisi mauris sit amet massa vitae tortor.</p>
+                <div class="social">
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="350">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="/static/images/her.jpg" class="img-fluid" alt="David Thompson" loading="lazy">
+              </div>
+              <div class="member-info">
+                <h4>David Thompson</h4>
+                <span>Head of Operations</span>
+                <p>Curabitur arcu erat accumsan id imperdiet et porttitor at sem nulla facilisi mauris sit amet massa vitae tortor.</p>
+                <div class="social">
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="350">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="/static/images/barry.jpg" class="img-fluid" alt="David Thompson" loading="lazy">
+              </div>
+              <div class="member-info">
+                <h4>David Thompson</h4>
+                <span>Head of Operations</span>
+                <p>Curabitur arcu erat accumsan id imperdiet et porttitor at sem nulla facilisi mauris sit amet massa vitae tortor.</p>
+                <div class="social">
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="350">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="/static/images/odoyo.jpg" class="img-fluid" alt="David Thompson" loading="lazy">
+              </div>
+              <div class="member-info">
+                <h4>David Thompson</h4>
+                <span>Head of Operations</span>
+                <p>Curabitur arcu erat accumsan id imperdiet et porttitor at sem nulla facilisi mauris sit amet massa vitae tortor.</p>
+                <div class="social">
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="350">
+            <div class="team-member">
+              <div class="member-img">
+                <img src="/static/images/brayo.jpg" class="img-fluid" alt="David Thompson" loading="lazy">
+              </div>
+              <div class="member-info">
+                <h4>David Thompson</h4>
+                <span>Head of Operations</span>
+                <p>Curabitur arcu erat accumsan id imperdiet et porttitor at sem nulla facilisi mauris sit amet massa vitae tortor.</p>
+                <div class="social">
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Team Member -->
+
+        </div>
+
       </div>
 
-      <!-- Team Member 2 -->
-      <div class="bg-white shadow-lg rounded-xl p-4 text-center">
-        <img src="/static/images/essy.jpg" alt="Awuor Attyang" class="rounded-lg mx-auto mb-4" />
-        <p class="text-teal-600 text-sm font-medium">Executive Assistant</p>
-        <h2 class="text-lg font-semibold mt-1">Chair Essy</h2>
-      </div>
+    </section><!-- /Team Section -->
 
-      <!-- Team Member 3 -->
-      <div class="bg-white shadow-lg rounded-xl p-4 text-center">
-        <img src="/static/images/essyalso.jpg" alt="Racheal Mwangi" class="rounded-lg mx-auto mb-4" />
-        <p class="text-teal-600 text-sm font-medium">Head of Training & Leadership Development</p>
-        <h2 class="text-lg font-semibold mt-1">Racheal Mwangi</h2>
-      </div>
-
-      <!-- Team Member 4 -->
-      <div class="bg-white shadow-lg rounded-xl p-4 text-center">
-        <img src="/static/images/grace.jpg" alt="Fedinard Arunga" class="rounded-lg mx-auto mb-4" />
-        <p class="text-teal-600 text-sm font-medium">Head of Finance and Operations</p>
-        <h2 class="text-lg font-semibold mt-1">Fedinard Arunga</h2>
-      </div>
-
-       <!-- Team Member 4 -->
-      <div class="bg-white shadow-lg rounded-xl p-4 text-center">
-        <img src="/static/images/her.jpg" alt="Fedinard Arunga" class="rounded-lg mx-auto mb-4" />
-        <p class="text-teal-600 text-sm font-medium">Head of Finance and Operations</p>
-        <h2 class="text-lg font-semibold mt-1">Fedinard Arunga</h2>
-      </div>
-       <!-- Team Member 4 -->
-      <div class="bg-white shadow-lg rounded-xl p-4 text-center">
-        <img src="/static/images/barry.jpg" alt="Fedinard Arunga" class="rounded-lg mx-auto mb-4" />
-        <p class="text-teal-600 text-sm font-medium">Head of Finance and Operations</p>
-        <h2 class="text-lg font-semibold mt-1">Fedinard Arunga</h2>
-      </div>
-
-       <!-- Team Member 4 -->
-      <div class="bg-white shadow-lg rounded-xl p-4 text-center">
-        <img src="/static/images/odoyo.jpg" alt="Fedinard Arunga" class="rounded-lg mx-auto mb-4" />
-        <p class="text-teal-600 text-sm font-medium">Head of Finance and Operations</p>
-        <h2 class="text-lg font-semibold mt-1">Fedinard Arunga</h2>
-      </div>
-
-       <!-- Team Member 4 -->
-      <div class="bg-white shadow-lg rounded-xl p-4 text-center">
-        <img src="/static/images/brayo.jpg" alt="Fedinard Arunga" class="rounded-lg mx-auto mb-4" />
-        <p class="text-teal-600 text-sm font-medium">Head of Finance and Operations</p>
-        <h2 class="text-lg font-semibold mt-1">Fedinard Arunga</h2>
-      </div>
-
-    </div>
-  </section>
 
 <!-- Footer -->
 {% include 'uppa/footer.html' %}
