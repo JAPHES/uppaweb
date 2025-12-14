@@ -5,88 +5,15 @@
   <meta charset="UTF-8">
   <title>UPPA Home</title>
     <link rel="icon" type="image/jpg" href="{% static 'images/uppalogo.jpg' %}">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <!-- Bootstrap CSS -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-
-    .carousel-caption {
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 10;
-    }
-
-    .carousel-caption h1 {
-      font-size: 3rem;
-      font-weight: bold;
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      color: white;
-      border-radius: 10px;
-    }
-
-    .carousel-item img {
-      height: 700px;
-      object-fit: cover;
-    }
-
-    .section-two-columns {
-      padding: 60px 20px;
-      background-color: #fff;
-    }
-
-    .desc-img {
-      width: 100%;
-      height: 100%;
-      max-height: 400px;
-      object-fit: cover;
-      border-radius: 10px;
-    }
-
-    .desc-text {
-      font-size: 1.25rem;
-      margin-top: 20px;
-      text-align: center;
-    }
-
-    .project-card {
-      transition: transform 0.3s ease;
-    }
-
-    .project-card:hover {
-      transform: scale(1.03);
-    }
-
-    .testimonial {
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      margin: 20px auto;
-      max-width: 800px;
-    }
-
-    @media (max-width: 768px) {
-      .carousel-caption h1 {
-        font-size: 2rem;
-        padding: 10px;
-      }
-
-      .desc-text {
-        font-size: 1rem;
-      }
-    }
-  </style>
 </head>
 <body>
 
@@ -122,6 +49,8 @@
     <span class="carousel-control-next-icon"></span>
   </button>
 </div>
+
+
 
 <!-- What We Do Section -->
 <section class="py-5 bg-light">
@@ -212,7 +141,7 @@
           </div>
           <p class="text-muted small mb-0">
             <i class="fas fa-quote-left text-primary"></i>
-            Joining UPPA opened doors I never imagined. I’ve gained confidence, leadership skills, and found a community that truly supports my goals
+            Joining UPPA opened doors I never imagined. I've gained confidence, leadership skills, and found a community that truly supports my goals
             <i class="fas fa-quote-right text-primary"></i>
           </p>
         </div>
@@ -229,7 +158,7 @@
           </div>
           <p class="text-muted small mb-0">
             <i class="fas fa-quote-left text-primary"></i>
-            UPPA’s youth-led initiatives have positively transformed our community. Their dedication to change is inspiring and deeply appreciated.
+            UPPA's youth-led initiatives have positively transformed our community. Their dedication to change is inspiring and deeply appreciated.
             <i class="fas fa-quote-right text-primary"></i>
           </p>
         </div>
@@ -263,7 +192,7 @@
           </div>
           <p class="text-muted small mb-0">
             <i class="fas fa-quote-left text-primary"></i>
-            UPPA gave me a platform to explore my tech skills and connect with like-minded youth. It’s more than a group—it’s family
+            UPPA gave me a platform to explore my tech skills and connect with like-minded youth. It's more than a group—it's family
             <i class="fas fa-quote-right text-primary"></i>
           </p>
         </div>
@@ -282,17 +211,16 @@
         <p class="text-muted mb-4">UPPA Frequently Asked Questions.</p>
 
         <div class="accordion" id="uppaFaq">
-
           <!-- FAQ 1 -->
           <div class="accordion-item mb-2">
             <h2 class="accordion-header" id="heading1">
-              <button class="accordion-button bg-light fw-bold text-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
                 <i class="fas fa-question-circle me-2 text-primary"></i>
                 What is UPPA and what does it stand for?
               </button>
             </h2>
-            <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#uppaFaq">
-              <div class="accordion-body text-muted">
+            <div id="collapse1" class="accordion-collapse collapse show" data-bs-parent="#uppaFaq">
+              <div class="accordion-body">
                 UPPA stands for Universal Project Partnership Association. It is an organization that empowers young innovators, leaders, and community members through collaborative projects and sustainable initiatives.
               </div>
             </div>
@@ -301,13 +229,13 @@
           <!-- FAQ 2 -->
           <div class="accordion-item mb-2">
             <h2 class="accordion-header" id="heading2">
-              <button class="accordion-button collapsed bg-light fw-bold text-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
                 <i class="fas fa-question-circle me-2 text-primary"></i>
                 Who can join UPPA?
               </button>
             </h2>
-            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#uppaFaq">
-              <div class="accordion-body text-muted">
+            <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#uppaFaq">
+              <div class="accordion-body">
                 UPPA is open to students, young professionals, community leaders, and anyone interested in contributing to social impact through innovation and teamwork.
               </div>
             </div>
@@ -316,13 +244,13 @@
           <!-- FAQ 3 -->
           <div class="accordion-item mb-2">
             <h2 class="accordion-header" id="heading3">
-              <button class="accordion-button collapsed bg-light fw-bold text-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
                 <i class="fas fa-question-circle me-2 text-primary"></i>
                 What kind of projects does UPPA handle?
               </button>
             </h2>
-            <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3" data-bs-parent="#uppaFaq">
-              <div class="accordion-body text-muted">
+            <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#uppaFaq">
+              <div class="accordion-body">
                 UPPA handles projects in technology, environment, education, entrepreneurship, and community development. Members propose and collaborate on initiatives that make a positive impact.
               </div>
             </div>
@@ -331,13 +259,13 @@
           <!-- FAQ 4 -->
           <div class="accordion-item mb-2">
             <h2 class="accordion-header" id="heading4">
-              <button class="accordion-button collapsed bg-light fw-bold text-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4">
                 <i class="fas fa-question-circle me-2 text-primary"></i>
                 How can I get involved in a UPPA project?
               </button>
             </h2>
-            <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#uppaFaq">
-              <div class="accordion-body text-muted">
+            <div id="collapse4" class="accordion-collapse collapse" data-bs-parent="#uppaFaq">
+              <div class="accordion-body">
                 You can get involved by signing up on the UPPA website, attending team meetings, volunteering on current projects, or submitting your own project idea for review and collaboration.
               </div>
             </div>
@@ -346,18 +274,17 @@
           <!-- FAQ 5 -->
           <div class="accordion-item">
             <h2 class="accordion-header" id="heading5">
-              <button class="accordion-button collapsed bg-light fw-bold text-start" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5">
                 <i class="fas fa-question-circle me-2 text-primary"></i>
                 Is UPPA registered or recognized?
               </button>
             </h2>
-            <div id="collapse5" class="accordion-collapse collapse" aria-labelledby="heading5" data-bs-parent="#uppaFaq">
-              <div class="accordion-body text-muted">
+            <div id="collapse5" class="accordion-collapse collapse" data-bs-parent="#uppaFaq">
+              <div class="accordion-body">
                 Yes, UPPA is a registered organization and works in partnership with universities, local governments, and institutions to support innovation and youth empowerment.
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
@@ -365,12 +292,14 @@
 </section>
 
 
+
+
 <!-- Footer -->
 {% include 'uppa/footer.html' %}
 
 <!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 
 
