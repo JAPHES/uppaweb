@@ -1,115 +1,117 @@
 {% load static %}
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap CSS -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Bootstrap Icons -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+<style>
+  .uppa-footer {
+    background: linear-gradient(135deg, #120052 0%, #1d0079 60%, #2d0fa6 100%);
+    color: #ffffff;
+    padding: 52px 0 20px;
+    margin-top: 56px;
+  }
+  .uppa-footer h5 {
+    color: #ffbe3b;
+    font-weight: 700;
+    font-size: 1.03rem;
+    margin-bottom: 14px;
+  }
+  .uppa-footer p,
+  .uppa-footer a {
+    color: #eaf0ff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    line-height: 1.65;
+  }
+  .uppa-footer .footer-link:hover {
+    color: #ffbe3b;
+  }
+  .uppa-footer .social-btn {
+    width: 34px;
+    height: 34px;
+    border: 1px solid rgba(255, 190, 59, 0.72);
+    border-radius: 8px;
+    color: #ffbe3b;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+  }
+  .uppa-footer .social-btn:hover {
+    background: #ffbe3b;
+    color: #1d0079;
+    transform: translateY(-1px);
+  }
+  .uppa-footer .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 8px;
+    padding-top: 14px;
+    font-size: 0.86rem;
+    color: #d7dff8;
+  }
+  .uppa-scroll-top {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #0d6efd;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 20px rgba(13, 110, 253, 0.35);
+    z-index: 1040;
+  }
+  .uppa-scroll-top:hover {
+    background: #0a58ca;
+    color: #fff;
+  }
+</style>
 
-  <title>Document</title>
-</head>
-<body>
-<footer style="background-color: #1d0079; color: white; padding: 50px 0 20px;">
+<footer class="uppa-footer">
   <div class="container">
-    <div class="row text-white">
-      <!-- Company Info -->
-      <div class="col-md-3 mb-4">
-        <h5 style="color: orange;">Univesal Project Partnership Projects</h5>
-        <p><i class="bi bi-geo-alt-fill"></i> Mombasa Road, Taita, Voi</p>
-        <p><i class="bi bi-telephone-fill"></i> +254 769809329</p>
-        <p><i class="bi bi-envelope-fill"></i> uppa.co.ke /<br>uppaprojects777@gmail.com</p>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <h5>Universal Project Partnership Association</h5>
+        <p><i class="bi bi-geo-alt-fill me-2"></i>Mombasa Road, Taita, Voi</p>
+        <p><i class="bi bi-telephone-fill me-2"></i>+254 769809329</p>
+        <p><i class="bi bi-envelope-fill me-2"></i>uppaprojects777@gmail.com</p>
         <div class="d-flex gap-2 mt-3">
-          <a href="https://linkedin.com/company/universal-project-partnership-association-uppa"
-             class="btn btn-sm btn-outline-warning rounded"><i class="bi bi-Linkedin"></i></a>
-          <a href="https://www.facebook.com/profile.php?id=61573937936762"
-             class="btn btn-sm btn-outline-warning rounded"><i class="bi bi-facebook"></i></a>
-          <a href="https://www.tiktok.com/@uppa_innovates?_t=ZM-8uSCZoFnS2o&_r=1"
-             class="btn btn-sm btn-outline-warning rounded"><i class="bi bi-youtube"></i></a>
-          <a href="https://www.tiktok.com/@uppa_innovates?_t=ZM-8uSCZoFnS2o&_r=1"
-             class="btn btn-sm btn-outline-warning rounded"><i class="bi bi-tiktok"></i></a>
-          <a href="https://whatsapp.com/channel/0029Vb8mbQnBlHpin9cxbV0Q"
-             class="btn btn-sm btn-outline-warning rounded"><i class="bi bi-whatsapp"></i></a>
+          <a href="https://linkedin.com/company/universal-project-partnership-association-uppa" class="social-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://www.facebook.com/profile.php?id=61573937936762" class="social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+          <a href="https://www.tiktok.com/@uppa_innovates?_t=ZM-8uSCZoFnS2o&_r=1" class="social-btn" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+          <a href="https://whatsapp.com/channel/0029Vb8mbQnBlHpin9cxbV0Q" class="social-btn" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
         </div>
       </div>
 
-      <!-- Quick Links -->
-<div class="col-md-3 mb-4">
-  <h5 style="color: orange;">Quick Links</h5>
-  <p>
-    <a href="{% url 'home' %}" class="text-white text-decoration-none">
-      <i class="bi bi-house-fill"></i> Home
-    </a>
-  </p>
-
-  <p>
-    <a href="{% url 'home' %}" class="text-white text-decoration-none">
-      <i class="bi bi-briefcase-fill"></i> Services
-    </a>
-  </p>
-  <p>
-    <a href="{% url 'contact' %}" class="text-white text-decoration-none">
-      <i class="bi bi-heart-fill"></i> Contact
-    </a>
-  </p>
-</div>
-
-
-      <!-- Objectives -->
-      <div class="col-md-3 mb-4">
-        <h5 style="color: orange;">Our Objectives</h5>
-        <p><i class="bi bi-droplet-fill"></i> Project Management</p>
-        <p><i class="bi bi-pc-display-horizontal"></i> Problem Solving</p>
-        <p><i class="bi bi-leaf-fill"></i> Job Creation</p>
-        <p><i class="bi bi-gear-fill"></i> Technical Excellence and Innovation</p>
+      <div class="col-md-6 col-lg-3">
+        <h5>Quick Links</h5>
+        <p><a href="{% url 'home' %}" class="footer-link"><i class="bi bi-house-fill me-2"></i>Home</a></p>
+        <p><a href="{% url 'about' %}" class="footer-link"><i class="bi bi-info-circle-fill me-2"></i>About Us</a></p>
+        <p><a href="{% url 'projects' %}" class="footer-link"><i class="bi bi-kanban-fill me-2"></i>Projects</a></p>
+        <p><a href="{% url 'contact' %}" class="footer-link"><i class="bi bi-envelope-paper-fill me-2"></i>Contact</a></p>
       </div>
 
-      <!-- News Update -->
-<div class="col-md-3 mb-4">
-  <h5 style="color: orange;">News Update</h5>
-  <p>
-    <i class="bi bi-file-earmark-text-fill"></i>
-    <a href="#" class="text-decoration-none text-white hover:text-primary">
-      UPPA Launches Youth Skill Development Program
-    </a>
-  </p>
-  <p>
-    <i class="bi bi-journal-richtext"></i>
-    <a href="#" class="text-decoration-none text-white hover:text-primary">
-      UPPA Successfully Holds First Leadership Forum
-    </a>
-  </p>
-  <p>
-    <i class="bi bi-person-plus-fill"></i>
-    <a href="#" class="text-decoration-none text-white hover:text-primary">
-      UPPA Elections Set for June 10th
-    </a>
-  </p>
-  <p>
-    <i class="bi bi-file-earmark"></i>
-    <a href="#" class="text-decoration-none text-white hover:text-primary">
-      UPPA Membership Drive Ongoing
-    </a>
-  </p>
-</div>
+      <div class="col-md-6 col-lg-3">
+        <h5>Our Focus</h5>
+        <p><i class="bi bi-people-fill me-2"></i>Youth Empowerment</p>
+        <p><i class="bi bi-lightbulb-fill me-2"></i>Innovation</p>
+        <p><i class="bi bi-diagram-3-fill me-2"></i>Partnerships</p>
+        <p><i class="bi bi-gear-fill me-2"></i>Sustainable Solutions</p>
+      </div>
 
+      <div class="col-md-6 col-lg-3">
+        <h5>Updates</h5>
+        <p><i class="bi bi-check-circle-fill me-2"></i>Youth skill development programs expanding.</p>
+        <p><i class="bi bi-check-circle-fill me-2"></i>Community project pilots in active rollout.</p>
+        <p><i class="bi bi-check-circle-fill me-2"></i>Leadership and entrepreneurship forums ongoing.</p>
+      </div>
+    </div>
 
-    <hr style="border-color: rgba(255,255,255,0.3);">
-
-    <div class="d-flex justify-content-between text-white small mt-3">
-      <div>© uppa.co.ke</div>
-      <div>All Rights Reserved. Universal Project Partnership association</div>
+    <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between">
+      <div>&copy; uppa.co.ke</div>
+      <div>All Rights Reserved. Universal Project Partnership Association</div>
     </div>
   </div>
 
-  <!-- Scroll-to-top button -->
-  <a href="#" class="btn btn-primary position-fixed bottom-0 end-0 m-3 rounded-circle">
-    <i class="bi bi-arrow-up"></i>
-  </a>
+  <a href="#" class="uppa-scroll-top" aria-label="Scroll to top"><i class="bi bi-arrow-up"></i></a>
 </footer>
-
-</body>
-</html>

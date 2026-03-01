@@ -1,75 +1,72 @@
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>UPPA</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="font-sans">
+<style>
+  .uppa-navbar {
+    background: linear-gradient(120deg, #14005d, #1d0079 55%, #2d0fa6);
+    box-shadow: 0 8px 28px rgba(12, 18, 38, 0.2);
+  }
+  .uppa-brand {
+    color: #ffbe3b;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    font-size: 1.05rem;
+  }
+  .uppa-brand:hover {
+    color: #ffd77d;
+  }
+  .uppa-logo {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ffbe3b;
+    box-shadow: 0 0 0 3px rgba(255, 190, 59, 0.18);
+  }
+  .uppa-navbar .nav-link {
+    color: #eef3ff;
+    font-weight: 600;
+    margin-left: 0.3rem;
+    margin-right: 0.3rem;
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    transition: all 0.2s ease;
+  }
+  .uppa-navbar .nav-link:hover,
+  .uppa-navbar .nav-link.active {
+    color: #111827;
+    background: #ffbe3b;
+  }
+  .uppa-navbar .navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+  .uppa-navbar .navbar-toggler:focus {
+    box-shadow: none;
+  }
+  .uppa-navbar .navbar-toggler-icon {
+    filter: invert(1) saturate(0) brightness(180%);
+  }
+</style>
 
-  <!-- Navbar -->
-  <header class="bg-[#1d0079] text-white shadow-md">
-    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+<nav class="navbar navbar-expand-lg uppa-navbar sticky-top">
+  <div class="container py-2">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="{% url 'home' %}">
+      <img src="{% static 'images/uppalogo.jpg' %}" alt="UPPA" class="uppa-logo">
+      <span class="uppa-brand">Explore UPPA</span>
+    </a>
 
-      <!-- Logo and Title -->
-      <div class="flex items-center space-x-4">
-        <img
-          src="{% static 'images/uppalogo.jpg' %}"
-          alt="UPPA Logo"
-          class="h-20 w-20 rounded-full border-4 border-[#ffb703] shadow-xl
-                 ring-4 ring-[#ffb703] hover:scale-105 transition-transform duration-300"
-        />
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#uppaNav" aria-controls="uppaNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <h1 class="text-2xl md:text-4xl font-extrabold uppercase tracking-wide text-[#ffb703]">
-          Explore UPPA
-        </h1>
-      </div>
-
-      <!-- Mobile Menu Button -->
-      <button id="menu-toggle" class="md:hidden text-white focus:outline-none">
-        <svg class="w-7 h-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round"
-                d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-
-      <!-- Navigation Links -->
-      <nav
-        id="nav-links"
-        class="hidden md:flex flex-col md:flex-row gap-4 mt-3 md:mt-0 md:items-center md:gap-6
-               text-[16px] md:text-[20px] font-medium"
-      >
-        <a href="{% url 'home' %}" class="no-underline text-white hover:text-[#ffb703] transition-colors">Home</a>
-        <a href="{% url 'about' %}" class="no-underline text-white hover:text-[#ffb703] transition-colors">About Us</a>
-        <a href="{% url 'departments' %}" class="no-underline text-white hover:text-[#ffb703] transition-colors">Departments</a>
-        <a href="{% url 'projects' %}" class="no-underline text-white hover:text-[#ffb703] transition-colors">Projects</a>
-        <a href="{% url 'contact' %}" class="no-underline text-white hover:text-[#ffb703] transition-colors">Contact Us</a>
-        <a href="{% url 'team' %}" class="no-underline text-white hover:text-[#ffb703] transition-colors">Our Team</a>
-      </nav>
-
+    <div class="collapse navbar-collapse" id="uppaNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'departments' %}">Departments</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'projects' %}">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'team' %}">Team</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+      </ul>
     </div>
-
-    <!-- Mobile Menu -->
-    <div
-      id="mobile-menu"
-      class="md:hidden hidden px-4 pb-4 text-[18px] font-medium bg-[#1d0079]">
-
-      <a href="{% url 'home' %}" class="block py-2 text-white hover:text-[#ffb703] transition-colors">Home</a>
-      <a href="{% url 'about' %}" class="block py-2 text-white hover:text-[#ffb703] transition-colors">About Us</a>
-      <a href="{% url 'departments' %}" class="block py-2 text-white hover:text-[#ffb703] transition-colors">Departments</a>
-      <a href="{% url 'projects' %}" class="block py-2 text-white hover:text-[#ffb703] transition-colors">Projects</a>
-      <a href="{% url 'contact' %}" class="block py-2 text-white hover:text-[#ffb703] transition-colors">Contact Us</a>
-      <a href="{% url 'team' %}" class="block py-2 text-white hover:text-[#ffb703] transition-colors">Our Team</a>
-    </div>
-  </header>
-
-
-
-
-  <script src="{% static 'js/main.js' %}"></script>
-
-
-</body>
-</html>
+  </div>
+</nav>

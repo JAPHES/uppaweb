@@ -2,194 +2,422 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UPPA Team</title>
-   <link rel="stylesheet" href="{% static 'css/main.css' %}">
-    <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-50 text-gray-800">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --team-bg: #f3f6ff;
+      --team-primary: #1d0079;
+      --team-accent: #0d6efd;
+      --team-highlight: #ffbe3b;
+      --team-text: #1f2937;
+      --team-muted: #5b6474;
+    }
 
-<!-- Navbar -->
+    body {
+      font-family: "Sora", sans-serif;
+      background: var(--team-bg);
+      color: var(--team-text);
+    }
+
+    .team-hero {
+      margin: 24px auto 0;
+      max-width: 1240px;
+      padding: 0 12px;
+    }
+
+    .team-hero-card {
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      min-height: 430px;
+      background: linear-gradient(120deg, rgba(17, 24, 39, 0.82), rgba(29, 0, 121, 0.78));
+      box-shadow: 0 22px 50px rgba(14, 24, 58, 0.28);
+    }
+
+    .team-hero-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.34;
+      position: absolute;
+      inset: 0;
+    }
+
+    .team-hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 52px 38px;
+      color: #ffffff;
+      max-width: 760px;
+    }
+
+    .team-pill {
+      display: inline-block;
+      border-radius: 999px;
+      background: rgba(255, 190, 59, 0.18);
+      border: 1px solid rgba(255, 190, 59, 0.5);
+      color: #ffe8ad;
+      padding: 8px 14px;
+      font-size: 0.83rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .team-hero h1 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.08;
+      margin-bottom: 14px;
+      font-weight: 800;
+    }
+
+    .team-hero p {
+      color: #e8ecff;
+      font-size: 1rem;
+      line-height: 1.75;
+      margin-bottom: 26px;
+      max-width: 670px;
+    }
+
+    .team-metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 620px;
+    }
+
+    .metric {
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 14px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 1.28rem;
+      color: #ffffff;
+      margin-bottom: 4px;
+    }
+
+    .metric span {
+      font-size: 0.84rem;
+      color: #dbe4ff;
+    }
+
+    .team-section {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 52px 14px 12px;
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.65rem, 3vw, 2.35rem);
+      color: var(--team-primary);
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .section-head p {
+      color: var(--team-muted);
+      max-width: 760px;
+      margin: 0 auto;
+      line-height: 1.7;
+      font-size: 0.98rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .team-card {
+      background: #ffffff;
+      border: 1px solid #dbe5ff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(16, 24, 40, 0.08);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      height: 100%;
+    }
+
+    .team-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 34px rgba(16, 24, 40, 0.18);
+    }
+
+    .team-photo-wrap {
+      background: linear-gradient(135deg, #edf2ff, #f6f9ff);
+      padding: 20px 20px 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .team-photo {
+      width: 112px;
+      height: 112px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ffffff;
+      box-shadow: 0 10px 25px rgba(13, 110, 253, 0.24);
+    }
+
+    .team-card-body {
+      padding: 16px 18px 18px;
+      text-align: center;
+    }
+
+    .team-card h3 {
+      font-size: 1.03rem;
+      margin: 0 0 6px;
+      color: #111827;
+      font-weight: 700;
+    }
+
+    .team-role {
+      color: var(--team-accent);
+      font-size: 0.83rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 9px;
+      min-height: 34px;
+    }
+
+    .team-bio {
+      color: #4b5563;
+      font-size: 0.89rem;
+      line-height: 1.56;
+      margin-bottom: 14px;
+      min-height: 84px;
+    }
+
+    .team-social {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .team-social a {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #eef3ff;
+      color: var(--team-primary);
+      border: 1px solid #d2ddff;
+      transition: all 0.2s ease;
+    }
+
+    .team-social a:hover {
+      background: var(--team-primary);
+      color: #ffffff;
+      border-color: var(--team-primary);
+    }
+
+    @media (max-width: 1100px) {
+      .team-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 850px) {
+      .team-hero-content {
+        padding: 38px 24px;
+      }
+      .team-metrics {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        max-width: 260px;
+      }
+      .team-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .team-bio {
+        min-height: 0;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+      .team-hero-card {
+        min-height: 470px;
+      }
+      .team-section {
+        padding-top: 42px;
+      }
+    }
+  </style>
+</head>
+<body>
+
 {% include 'uppa/navbar.html' %}
 
-<!-- Contact Us Banner Section -->
-<section class="container mt-4">
-  <div class="position-relative rounded overflow-hidden border-top border-5 border-warning shadow-lg">
-    <img src="{% static 'images/departments.jpg' %}"
-     alt="Contact Banner"
-     class="img-fluid w-100 responsive-banner"
-     style="height: 500px; object-fit: cover; display: block; border-radius: 10px; z-index: 10; position: relative;">
+<section class="team-hero">
+  <div class="team-hero-card">
+    <img src="{% static 'images/departments.jpg' %}" alt="UPPA team banner">
+    <div class="team-hero-content">
+      <span class="team-pill">Leadership and Execution</span>
+      <h1>Meet The People Driving UPPA Forward</h1>
+      <p>Our team combines leadership, strategy, community impact, and innovation. Every member contributes practical expertise to deliver meaningful projects and youth empowerment programs across communities.</p>
+      <div class="team-metrics">
+        <div class="metric">
+          <strong>9+</strong>
+          <span>Core Leaders</span>
+        </div>
+        <div class="metric">
+          <strong>47</strong>
+          <span>County Vision</span>
+        </div>
+        <div class="metric">
+          <strong>100%</strong>
+          <span>Community Focus</span>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
+<section class="team-section">
+  <div class="section-head">
+    <h2>Our Team</h2>
+    <p>Dedicated professionals shaping stronger projects, better partnerships, and sustainable solutions through collaboration, discipline, and innovation.</p>
+  </div>
 
-                                                     <!-- Team Section -->
-    <section id="team" class="team section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <span class="subtitle">Team</span>
-        <h2>Meet Our Team</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium totam rem aperiam</p>
-      </div><!-- End Section Title -->
-
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <div class="row gy-5">
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="/static/images/integ.jpg" class="img-fluid" alt="Sarah Johnson" loading="lazy">
-              </div>
-              <div class="member-info">
-                <h4>Sarah Johnson</h4>
-                <span>Chief Executive Officer</span>
-                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas vestibulum tortor quam.</p>
-                <div class="social">
-                  <a href="#"><i class="bi bi-twitter-x"></i></a>
-                  <a href="#"><i class="bi bi-linkedin"></i></a>
-                  <a href="#"><i class="bi bi-instagram"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="250">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="/static/images/essy.jpg" class="img-fluid" alt="Michael Chen" loading="lazy">
-              </div>
-              <div class="member-info">
-                <h4>Michael Chen</h4>
-                <span>Chief Technology Officer</span>
-                <p>Mauris blandit aliquet elit eget tincidunt nibh pulvinar rutrum tellus ac blandit elit eget tincidunt mauris.</p>
-                <div class="social">
-                  <a href="#"><i class="bi bi-twitter-x"></i></a>
-                  <a href="#"><i class="bi bi-linkedin"></i></a>
-                  <a href="#"><i class="bi bi-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="/static/images/essyalso.jpg" class="img-fluid" alt="Emily Rodriguez" loading="lazy">
-              </div>
-              <div class="member-info">
-                <h4>Emily Rodriguez</h4>
-                <span>Creative Director</span>
-                <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae donec velit neque auctor.</p>
-                <div class="social">
-                  <a href="#"><i class="bi bi-twitter-x"></i></a>
-                  <a href="#"><i class="bi bi-linkedin"></i></a>
-                  <a href="#"><i class="bi bi-dribbble"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="350">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="/static/images/grace.jpg" class="img-fluid" alt="David Thompson" loading="lazy">
-              </div>
-              <div class="member-info">
-                <h4>David Thompson</h4>
-                <span>Head of Operations</span>
-                <p>Curabitur arcu erat accumsan id imperdiet et porttitor at sem nulla facilisi mauris sit amet massa vitae tortor.</p>
-                <div class="social">
-                  <a href="#"><i class="bi bi-twitter-x"></i></a>
-                  <a href="#"><i class="bi bi-linkedin"></i></a>
-                  <a href="#"><i class="bi bi-facebook"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="350">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="/static/images/her.jpg" class="img-fluid" alt="David Thompson" loading="lazy">
-              </div>
-              <div class="member-info">
-                <h4>David Thompson</h4>
-                <span>Head of Operations</span>
-                <p>Curabitur arcu erat accumsan id imperdiet et porttitor at sem nulla facilisi mauris sit amet massa vitae tortor.</p>
-                <div class="social">
-                  <a href="#"><i class="bi bi-twitter-x"></i></a>
-                  <a href="#"><i class="bi bi-linkedin"></i></a>
-                  <a href="#"><i class="bi bi-facebook"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="350">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="/static/images/barry.jpg" class="img-fluid" alt="David Thompson" loading="lazy">
-              </div>
-              <div class="member-info">
-                <h4>David Thompson</h4>
-                <span>Head of Operations</span>
-                <p>Curabitur arcu erat accumsan id imperdiet et porttitor at sem nulla facilisi mauris sit amet massa vitae tortor.</p>
-                <div class="social">
-                  <a href="#"><i class="bi bi-twitter-x"></i></a>
-                  <a href="#"><i class="bi bi-linkedin"></i></a>
-                  <a href="#"><i class="bi bi-facebook"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="350">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="/static/images/odoyo.jpg" class="img-fluid" alt="David Thompson" loading="lazy">
-              </div>
-              <div class="member-info">
-                <h4>David Thompson</h4>
-                <span>Head of Operations</span>
-                <p>Curabitur arcu erat accumsan id imperdiet et porttitor at sem nulla facilisi mauris sit amet massa vitae tortor.</p>
-                <div class="social">
-                  <a href="#"><i class="bi bi-twitter-x"></i></a>
-                  <a href="#"><i class="bi bi-linkedin"></i></a>
-                  <a href="#"><i class="bi bi-facebook"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
-          <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="350">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="/static/images/brayo.jpg" class="img-fluid" alt="David Thompson" loading="lazy">
-              </div>
-              <div class="member-info">
-                <h4>David Thompson</h4>
-                <span>Head of Operations</span>
-                <p>Curabitur arcu erat accumsan id imperdiet et porttitor at sem nulla facilisi mauris sit amet massa vitae tortor.</p>
-                <div class="social">
-                  <a href="#"><i class="bi bi-twitter-x"></i></a>
-                  <a href="#"><i class="bi bi-linkedin"></i></a>
-                  <a href="#"><i class="bi bi-facebook"></i></a>
-                </div>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
-
+  <div class="team-grid">
+    <article class="team-card">
+      <div class="team-photo-wrap"><img src="{% static 'images/integ.jpg' %}" alt="Sarah Johnson" class="team-photo"></div>
+      <div class="team-card-body">
+        <h3>Sarah Johnson</h3>
+        <div class="team-role">Chief Executive Officer</div>
+        <p class="team-bio">Leads strategy, partnerships, and execution across all UPPA programs and institutional initiatives.</p>
+        <div class="team-social">
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
-
       </div>
+    </article>
 
-    </section><!-- /Team Section -->
+    <article class="team-card">
+      <div class="team-photo-wrap"><img src="{% static 'images/essy.jpg' %}" alt="Michael Chen" class="team-photo"></div>
+      <div class="team-card-body">
+        <h3>Michael Chen</h3>
+        <div class="team-role">Chief Technology Officer</div>
+        <p class="team-bio">Oversees digital systems, ICT roadmap, and technology-enabled project delivery.</p>
+        <div class="team-social">
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-github"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </article>
 
+    <article class="team-card">
+      <div class="team-photo-wrap"><img src="{% static 'images/essyalso.jpg' %}" alt="Emily Rodriguez" class="team-photo"></div>
+      <div class="team-card-body">
+        <h3>Emily Rodriguez</h3>
+        <div class="team-role">Creative Director</div>
+        <p class="team-bio">Shapes communication, visual storytelling, and campaign branding across UPPA platforms.</p>
+        <div class="team-social">
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-dribbble"></i></a>
+        </div>
+      </div>
+    </article>
 
-<!-- Footer -->
+    <article class="team-card">
+      <div class="team-photo-wrap"><img src="{% static 'images/grace.jpg' %}" alt="David Thompson" class="team-photo"></div>
+      <div class="team-card-body">
+        <h3>David Thompson</h3>
+        <div class="team-role">Head of Operations</div>
+        <p class="team-bio">Coordinates day-to-day operations, internal workflows, and interdepartmental alignment.</p>
+        <div class="team-social">
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="team-card">
+      <div class="team-photo-wrap"><img src="{% static 'images/her.jpg' %}" alt="Fatima Noor" class="team-photo"></div>
+      <div class="team-card-body">
+        <h3>Fatima Noor</h3>
+        <div class="team-role">Programs Coordinator</div>
+        <p class="team-bio">Supports planning, implementation, and monitoring of high-impact community programs.</p>
+        <div class="team-social">
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="team-card">
+      <div class="team-photo-wrap"><img src="{% static 'images/barry.jpg' %}" alt="Barry Ochieng" class="team-photo"></div>
+      <div class="team-card-body">
+        <h3>Barry Ochieng</h3>
+        <div class="team-role">Communications Lead</div>
+        <p class="team-bio">Manages external communication, media relations, and brand reputation.</p>
+        <div class="team-social">
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="team-card">
+      <div class="team-photo-wrap"><img src="{% static 'images/odoyo.jpg' %}" alt="Odoyo Kevin" class="team-photo"></div>
+      <div class="team-card-body">
+        <h3>Odoyo Kevin</h3>
+        <div class="team-role">Finance Lead</div>
+        <p class="team-bio">Leads budgeting, financial controls, and accountability for project resources.</p>
+        <div class="team-social">
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="team-card">
+      <div class="team-photo-wrap"><img src="{% static 'images/brayo.jpg' %}" alt="Brayo Oduor" class="team-photo"></div>
+      <div class="team-card-body">
+        <h3>Brayo Oduor</h3>
+        <div class="team-role">Community Engagement Lead</div>
+        <p class="team-bio">Builds relationships with youth networks, partners, and local stakeholders.</p>
+        <div class="team-social">
+          <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
 {% include 'uppa/footer.html' %}
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

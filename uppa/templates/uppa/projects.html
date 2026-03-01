@@ -1,40 +1,149 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Projects | UPPA</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f4f8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-        }
-        .construction-message {
-            text-align: center;
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        .construction-message h1 {
-            color: #333;
-            margin-bottom: 10px;
-        }
-        .construction-message p {
-            color: #777;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | UPPA</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: "Sora", sans-serif; background: #f4f7ff; color: #1f2937; }
+    .projects-hero {
+      margin-top: 24px;
+      border-radius: 20px;
+      overflow: hidden;
+      min-height: 380px;
+      position: relative;
+      box-shadow: 0 20px 45px rgba(16,24,40,.2);
+    }
+    .projects-hero img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+    .projects-hero::after { content:""; position:absolute; inset:0; background: linear-gradient(120deg, rgba(17,24,39,.84), rgba(13,110,253,.6)); }
+    .projects-content { position: relative; z-index:2; color:#fff; max-width: 720px; padding: 52px 40px; }
+    .projects-content h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 12px; }
+    .projects-content p { color:#e9efff; line-height: 1.75; }
+    .section { padding: 64px 0 16px; }
+    .section h2 { color:#1d0079; font-weight: 800; text-align:center; margin-bottom: 10px; }
+    .section .lead { color:#5b6474; text-align:center; margin-bottom: 28px; }
+    .project-card {
+      background:#fff;
+      border:1px solid #dbe4ff;
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow: 0 12px 24px rgba(16,24,40,.09);
+      height:100%;
+      transition: transform .2s ease;
+    }
+    .project-card:hover { transform: translateY(-5px); }
+    .project-card img { width:100%; height:220px; object-fit:cover; }
+    .project-card .body { padding: 16px; }
+    .badge-soft {
+      display:inline-block;
+      padding: .28rem .6rem;
+      border-radius: 999px;
+      font-size: .76rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .badge-live { background:#ddf7e6; color:#146c43; }
+    .badge-plan { background:#e7f0ff; color:#0d6efd; }
+    .badge-next { background:#fff3d4; color:#9a6700; }
+  </style>
 </head>
 <body>
 
-<div class="construction-message">
-    <h1>🚧 Page Under Construction</h1>
-    <p>We're working hard to bring you the latest updates on our projects. Stay tuned!</p>
+{% include 'uppa/navbar.html' %}
+
+<div class="container">
+  <section class="projects-hero">
+    <img src="{% static 'images/projectdep.jpg' %}" alt="Projects">
+    <div class="projects-content">
+      <h1>Our Projects</h1>
+      <p>UPPA projects are built to solve real community needs. We combine leadership, technology, and teamwork to deliver practical outcomes with long-term social value.</p>
+    </div>
+  </section>
 </div>
 
+<section class="section">
+  <div class="container">
+    <h2>Current and Upcoming Projects</h2>
+    <p class="lead">A quick view of flagship initiatives driving youth empowerment and social impact.</p>
+
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <article class="project-card">
+          <img src="{% static 'images/bootcamp.jpg' %}" alt="Digital Skills Bootcamp">
+          <div class="body">
+            <span class="badge-soft badge-live">Live Project</span>
+            <h5 class="fw-bold">Youth Digital Skills Bootcamp</h5>
+            <p class="text-muted mb-0">Hands-on training in digital tools, freelancing, and productivity for career growth.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <article class="project-card">
+          <img src="{% static 'images/community.jpg' %}" alt="Community Initiative">
+          <div class="body">
+            <span class="badge-soft badge-live">Live Project</span>
+            <h5 class="fw-bold">Community Clean-Up Initiative</h5>
+            <p class="text-muted mb-0">Local volunteer action to improve neighborhood cleanliness and environmental responsibility.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <article class="project-card">
+          <img src="{% static 'images/mentorship.jpg' %}" alt="Mentorship Program">
+          <div class="body">
+            <span class="badge-soft badge-plan">In Planning</span>
+            <h5 class="fw-bold">Entrepreneurship Mentorship Program</h5>
+            <p class="text-muted mb-0">Structured mentorship for young founders to build sustainable and scalable ventures.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <article class="project-card">
+          <img src="{% static 'images/reaserchdep.jpg' %}" alt="Innovation challenge">
+          <div class="body">
+            <span class="badge-soft badge-next">Next Phase</span>
+            <h5 class="fw-bold">Innovation Challenge Series</h5>
+            <p class="text-muted mb-0">Idea-to-prototype challenges that encourage practical problem solving by youth teams.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <article class="project-card">
+          <img src="{% static 'images/communicationdep.jpg' %}" alt="Communications and outreach">
+          <div class="body">
+            <span class="badge-soft badge-plan">In Planning</span>
+            <h5 class="fw-bold">Community Outreach and Awareness</h5>
+            <p class="text-muted mb-0">Campaigns designed to connect citizens with opportunities and social services.</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-md-6 col-lg-4">
+        <article class="project-card">
+          <img src="{% static 'images/socialmediadep.jpg' %}" alt="Digital engagement">
+          <div class="body">
+            <span class="badge-soft badge-next">Next Phase</span>
+            <h5 class="fw-bold">Digital Engagement Expansion</h5>
+            <p class="text-muted mb-0">Building online communities that support learning, collaboration, and project visibility.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include 'uppa/footer.html' %}
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
