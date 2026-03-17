@@ -14,7 +14,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # ----------------------------------------------------------------------------
 DEBUG = os.getenv("DJANGO_DEBUG", "False").lower() == "true"
 
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", "dev-secret-key")
+# Secret key: required in production, fallback only for local dev.
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY") or "dev-secret-key"
 if not DEBUG and SECRET_KEY == "dev-secret-key":
     raise RuntimeError("DJANGO_SECRET_KEY must be set in production")
 
@@ -81,14 +82,25 @@ WSGI_APPLICATION = "uppawebsite.wsgi.application"
 
 # ----------------------------------------------------------------------------
 # Database
+# - Local: SQLite (no sslmode, avoids crashes)
+# - Production: DATABASE_URL (e.g., Postgres on Render) with SSL required
 # ----------------------------------------------------------------------------
-DATABASES = {
-    "default": dj_database_url.config(
-        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
-        conn_max_age=600,
-        ssl_require=not DEBUG,
-    )
-}
+DATABASE_URL = os.getenv("DATABASE_URL")
+if DATABASE_URL:
+    DATABASES = {
+        "default": dj_database_url.parse(
+            DATABASE_URL,
+            conn_max_age=600,
+            ssl_require=True,
+        )
+    }
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": BASE_DIR / "db.sqlite3",
+        }
+    }
 
 # ----------------------------------------------------------------------------
 # Password validation
@@ -109,11 +121,11 @@ USE_I18N = True
 USE_TZ = True
 
 # ----------------------------------------------------------------------------
-# Static files
+# Static files (served by WhiteNoise in production)
 # ----------------------------------------------------------------------------
 STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR / "staticfiles"
-STATICFILES_DIRS = [BASE_DIR / "uppa" / "static"]
+STATIC_ROOT = BASE_DIR / "staticfiles"              # collectstatic target
+STATICFILES_DIRS = [BASE_DIR / "uppa" / "static"]   # source assets
 
 STORAGES = {
     "staticfiles": {"BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage"},
