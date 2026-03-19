@@ -3,6 +3,9 @@ from django.shortcuts import render
 
 # Create your views here.
 
+def health(request):
+    return HttpResponse("OK")
+
 def home(request):
     return render(request, 'uppa/home.html')
 
@@ -22,6 +25,3 @@ def projects(request):
     return render(request, 'uppa/projects.html')
 
 
-def health(request):
-    """Lightweight health endpoint without touching templates or the database."""
-    return HttpResponse("OK", content_type="text/plain")
