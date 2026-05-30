@@ -74,6 +74,8 @@ Optional variables:
 - `CSRF_TRUSTED_ORIGINS`: comma-separated origins such as `https://example.com`
 - `DATABASE_SSL_REQUIRE`: defaults to `true`; set to `false` only for a non-SSL database
 
+Railway health checks use `/health/` and the `healthcheck.railway.app` hostname.
+
 Deploy from GitHub:
 1. Push this repository to GitHub.
 2. In Railway, create a new project and choose **Deploy from GitHub repo**.

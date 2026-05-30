@@ -23,7 +23,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY") or os.getenv("SECRET_KEY") or "dev-s
 if not DEBUG and SECRET_KEY == "dev-secret-key":
     raise RuntimeError("DJANGO_SECRET_KEY or SECRET_KEY must be set in production")
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "healthcheck.railway.app"]
 railway_public_domain = os.getenv("RAILWAY_PUBLIC_DOMAIN")
 if railway_public_domain:
     ALLOWED_HOSTS.append(railway_public_domain)
