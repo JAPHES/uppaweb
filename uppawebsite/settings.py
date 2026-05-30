@@ -1,6 +1,6 @@
 """
 Production-ready Django settings for uppawebsite.
-Optimised for Render deployment with Gunicorn and WhiteNoise.
+Optimised for Railway deployment with Gunicorn and WhiteNoise.
 """
 import os
 from pathlib import Path
@@ -9,24 +9,29 @@ import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+
+def env_list(name):
+    return [item.strip() for item in os.getenv(name, "").split(",") if item.strip()]
+
 # ----------------------------------------------------------------------------
 # Core settings
 # ----------------------------------------------------------------------------
 DEBUG = os.getenv("DJANGO_DEBUG", "False").lower() == "true"
 
 # Secret key: required in production, fallback only for local dev.
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY") or "dev-secret-key"
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY") or os.getenv("SECRET_KEY") or "dev-secret-key"
 if not DEBUG and SECRET_KEY == "dev-secret-key":
-    raise RuntimeError("DJANGO_SECRET_KEY must be set in production")
+    raise RuntimeError("DJANGO_SECRET_KEY or SECRET_KEY must be set in production")
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "uppawebsite.onrender.com"]
-render_hostname = os.getenv("RENDER_EXTERNAL_HOSTNAME")
-if render_hostname:
-    ALLOWED_HOSTS.append(render_hostname)
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
+railway_public_domain = os.getenv("RAILWAY_PUBLIC_DOMAIN")
+if railway_public_domain:
+    ALLOWED_HOSTS.append(railway_public_domain)
+ALLOWED_HOSTS.extend(env_list("DJANGO_ALLOWED_HOSTS"))
 
-default_csrf_origins = {"https://uppawebsite.onrender.com"}
-if render_hostname:
-    default_csrf_origins.add(f"https://{render_hostname}")
+default_csrf_origins = set()
+if railway_public_domain:
+    default_csrf_origins.add(f"https://{railway_public_domain}")
 csrf_env = os.getenv("CSRF_TRUSTED_ORIGINS", "")
 if csrf_env:
     default_csrf_origins.update(origin.strip() for origin in csrf_env.split(",") if origin.strip())
@@ -83,15 +88,16 @@ WSGI_APPLICATION = "uppawebsite.wsgi.application"
 # ----------------------------------------------------------------------------
 # Database
 # - Local: SQLite (no sslmode, avoids crashes)
-# - Production: DATABASE_URL (e.g., Postgres on Render) with SSL required
+# - Production: DATABASE_URL (e.g., Postgres on Railway) with SSL required by default
 # ----------------------------------------------------------------------------
 DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_SSL_REQUIRE = os.getenv("DATABASE_SSL_REQUIRE", "true").lower() == "true"
 if DATABASE_URL:
     DATABASES = {
         "default": dj_database_url.parse(
             DATABASE_URL,
             conn_max_age=600,
-            ssl_require=True,
+            ssl_require=DATABASE_SSL_REQUIRE,
         )
     }
 else:
